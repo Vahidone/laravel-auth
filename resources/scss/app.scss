@@ -1,1 +1,28 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+
+
+header {
+    height: 70px;
+}
+
+.main-wrapper {
+    height: calc(100vh - 70px);
+}
+aside {
+    width: 250px;
+    height: 100%;
+    ul {
+        list-style: none;
+        a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+                color: rgb(207, 204, 204);
+                text-underline-offset: 5px;
+            }
+        }
+    }
+
+}
