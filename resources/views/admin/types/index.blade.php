@@ -3,15 +3,15 @@
 
 @section('content')
 
-<main class="main-projects w-100">
+<main class="main-csm w-100">
     <h1 class="text-center text-white fw-bold mb-5">Types</h1>
 
     <table class="table table-dark table-striped text-center">
         <thead>
             <tr>
-                <th scope="col">id</th>
-                <th scope="col">titolo</th>
-                <th scope="col">Azioni</th>
+                <th class="fs-5 fw-bold">ID</th>
+                <th class="fs-5 fw-bold">Title</th>
+                <th class="fs-5 fw-bold">Action</th>
             </tr>
         </thead>
         <tbody>

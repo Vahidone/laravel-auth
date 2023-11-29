@@ -4,17 +4,17 @@
 @section('content')
 
 
-    <main class="main-projects">
-        <h1 class="text-center text-white fw-bold mb-5">Lista dei progetti</h1>
+    <main class="main-csm">
+        <h1 class="text-center text-white fw-bold mb-5">Project List</h1>
 
         <table class="table table-dark table-striped text-center">
             <thead>
                 <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">titolo</th>
-                    <th scope="col">decrizione</th>
-                    <th scope="col">data</th>
-                    <th scope="col">Azioni</th>
+                    <th class="fw-bold fs-5">ID</th>
+                    <th class="fw-bold fs-5">Title</th>
+                    <th class="fw-bold fs-5">Description</th>
+                    <th class="fw-bold fs-5">Date</th>
+                    <th class="fw-bold fs-5">Action</th>
                 </tr>
             </thead>
             <tbody>

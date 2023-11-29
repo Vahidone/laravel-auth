@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <main class="main-dashboard">
+    <main class="main-csm">
 
         <h1 class="text-white text-center fw-bold ">Dashboard</h1>
 

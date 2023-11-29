@@ -3,7 +3,7 @@
 
 @section('content')
 
-    <main class="main-projects text-center text-white w-100">
+    <main class="main-csm text-center text-white w-100">
         <h1>{{ $project->name}}</h1>
         @php
             $date = date_create($project->release_date);

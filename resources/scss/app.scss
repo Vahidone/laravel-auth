@@ -1,19 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
 
-@import './main.projects';
-@import './main-technologies';
-@import './main-dashboard';
 
+
+.hide {
+    display: none;
+}
 
 
 header {
     height: 70px;
     padding: 0 20px;
+    padding-top: 8px;
+
+
 }
 
 .main-wrapper {
     height: calc(100vh - 70px);
 }
+
 aside {
     width: 250px;
     height: 100%;
@@ -38,4 +43,10 @@ aside {
 
 }
 
+.main-csm {
+    width: 100%;
+    padding: 100px;
+    background-color: rgb(61, 81, 61);
+
+}
 
