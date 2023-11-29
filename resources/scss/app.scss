@@ -1,9 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 
+@import './main.projects';
+@import './main-technologies';
+@import './main-dashboard';
+
 
 
 header {
     height: 70px;
+    padding: 0 20px;
 }
 
 .main-wrapper {
@@ -12,17 +17,25 @@ header {
 aside {
     width: 250px;
     height: 100%;
+    padding-top: 30px;
     ul {
         list-style: none;
-        a {
-            color: white;
-            text-decoration: none;
-            &:hover {
-                text-decoration: underline;
-                color: rgb(207, 204, 204);
-                text-underline-offset: 5px;
+        li {
+            margin-bottom: 20px;
+            a {
+                color: white;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                    color: rgb(207, 204, 204);
+                    text-underline-offset: 5px;
+                }
             }
+
         }
+
     }
 
 }
+
+

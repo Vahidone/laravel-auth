@@ -4,7 +4,8 @@
     <nav>
         <ul>
             <li><a href="{{ route('admin.home')}}">Dashboard</a></li>
-            <li><a href="#">Lista progetti</a></li>
+            <li><a href="{{ route('admin.projects.index')}}">Lista progetti</a></li>
+            <li><a href="{{ route('admin.technologies.index')}}">Technologie utilizzate</a></li>
         </ul>
     </nav>
 </aside>

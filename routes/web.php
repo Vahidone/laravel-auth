@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController;
 use App\http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\admin\ProjectController;
+use App\Http\Controllers\admin\TechnologyController;
+use App\Http\Controllers\admin\TypeController;
 
 
 
@@ -20,6 +23,9 @@ Route::middleware(['auth','verified'])
     ->name('admin.')
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('home');
+        Route::resource('projects', ProjectController::class);
+        Route::resource('technologies', TechnologyController::class);
+        Route::resource('types', TypeController::class);
     });
 
 

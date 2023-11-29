@@ -2,6 +2,12 @@
 
 @section('content')
 
-<h1>home Admin</h1>
+    <main class="main-dashboard">
+
+        <h1 class="text-white text-center fw-bold ">Dashboard</h1>
+
+    </main>
+
+
 
 @endsection
