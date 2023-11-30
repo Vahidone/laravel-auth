@@ -30,7 +30,7 @@
                 @endif
 
 
-                <form action="{{ route('admin.technologies.store')}}" method="POST">
+                <form action="{{ route('admin.technologies.store')}}" method="POST" class="mb-5">
                     @csrf
 
                     <div class="input-group mb-3 mt-4">
@@ -59,11 +59,11 @@
 
                                 <td>{{ $technology->name}}</td>
                                 <td>
-                                    <form action="{{ route('admin.technologies.destroy', $technology->id)}}"    method="POST" onsubmit="return confirm('sei sicuro di voler eliminare questa technologia?')">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger" ><i class="fa-regular fa-trash-can"></i></button>
-                                    </form>
+                                   @include('admin.partials.form-delete', [
+                                    'route' => route('admin.technologies.destroy', $technology),
+                                    'message' => 'sei sicuro di voler eliminare questa technologia?'
+
+                                   ])
                                 </td>
 
                             </tr>
