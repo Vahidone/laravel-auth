@@ -21,6 +21,14 @@ header {
 
 .main-wrapper {
     height: calc(100vh - 70px);
+    .form-hidden{
+        width: 100%;
+        border: none;
+        &:focus{
+            border:none;
+            outline: none;
+        }
+    }
 }
 
 aside {
