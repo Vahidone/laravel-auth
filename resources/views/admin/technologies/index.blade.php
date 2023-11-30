@@ -14,6 +14,20 @@
 
             <div class="col-6">
 
+                @if ($errors->any())
+
+
+                    <div class="alert alert-warning" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+                @endif
+
+
                 @if (session('error'))
                     <div id="alert-message"  class="alert alert-warning" role="alert">
                         {{ session('error') }}
@@ -42,7 +56,7 @@
 
 
 
-                <table class="table table-dark table-striped text-center">
+                <table class="table table-dark">
                     <thead>
                         <tr>
                             <th class="fs-5 fw-bold">Name</th>
@@ -57,13 +71,28 @@
 
                             <tr>
 
-                                <td>{{ $technology->name}}</td>
                                 <td>
+                                    <form action="{{ route('admin.technologies.update', $technology)}}" method="POST" id="form-edit">
+                                        @csrf
+                                        @method('PUT')
+
+
+                                        <input type="text" class="form-hidden bg-dark text-white" value="{{ $technology->name}}" name="name">
+
+                                    </form>
+                                </td>
+
+
+                                <td>
+
+                                    <button onclick="submitForm()" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+
                                    @include('admin.partials.form-delete', [
                                     'route' => route('admin.technologies.destroy', $technology),
                                     'message' => 'sei sicuro di voler eliminare questa technologia?'
-
                                    ])
+
+
                                 </td>
 
                             </tr>
@@ -81,6 +110,15 @@
 
 
     </main>
+
+    <script>
+
+        function submitForm() {
+            const form = document.getElementById('form-edit');
+            form.submit();
+
+        }
+    </script>
 
 
 
