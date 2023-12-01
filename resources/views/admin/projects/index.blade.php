@@ -24,9 +24,10 @@
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->description }}</td>
                     <td>{{ $project->release_date }}</td>
-                    <td>
+                    <td class="d-flex">
                         <a class="btn btn-success" href="{{ route('admin.projects.show', $project)}}"><i class="fa-solid fa-eye"></i></a>
-                        <a class="btn btn-warning" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a class="btn btn-warning ms-2" href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+
                     </td>
                 </tr>
                 @endforeach

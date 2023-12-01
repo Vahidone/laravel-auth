@@ -2,13 +2,16 @@
 
 @section('content')
 
-<h1>{{ $title }}</h1>
+<div class="main-csm">
 
-{{-- $errors->any() restituisce true se almeno un errore è presente nel form  --}}
+
+    <h1 class="text-white mb-4">{{ $title }}</h1>
+
+
 @if($errors->any())
 <div class="alert alert-danger" role="alert">
     <ul>
-        {{-- $erroro->all() è una  funzione che restituisce tutti gli errori presenti nel form mettendoli in un array  --}}
+
         @foreach($errors->all() as $error)
         <li>{{ $error }}</li>
         @endforeach
@@ -29,7 +32,7 @@
             @csrf
             @method($method)
             <div class="mb-3">
-                <label for="title" class="form-label">Titolo Progetto *</label>
+                <label for="title" class="form-label text-white">Titolo Progetto *</label>
                 <input
                   id="title"
                   class="form-control @error('title') is-invalid @enderror"
@@ -42,12 +45,12 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="release_date" class="form-label">Data</label>
+                <label for="release_date" class="form-label text-white">Data</label>
                 <input
                   id="release_date"
                   class="form-control @error('release_date') is-invalid @enderror"
                   name="release_date"
-                  type="number"
+                  type="text"
                   value="{{ old('release_date', $project?->release_date) }}"
                 >
                 @error('release_date')
@@ -55,7 +58,7 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="image" class="form-label">Immagine</label>
+                <label for="image" class="form-label text-white">Immagine</label>
                 <input
                   id="image"
                   class="form-control @error('image') is-invalid @enderror"
@@ -69,11 +72,15 @@
                 @if ($project)
                 <img width="150" src="{{ asset('storage/' . $project->image) }}"  />
                 @endif
-                {{-- <img width="150" src="/img/placeholder.png"  /> --}}
+
             </div>
-            <div class="form-floating mb-5">
-                <textarea class="form-control" placeholder="Descrizione" id="Descrizione" name="description" style="height: 200px">{{ old('description',$project?->description)  }}</textarea>
+
+
+            <div class="form-floating my-5">
                 <label for="Descrizione">Descrizione</label>
+
+                <textarea class="form-control" placeholder="Descrizione" id="Descrizione" name="description" style="height: 200px">{{ old('description',$project?->description)  }}</textarea>
+
                 @error('description')
                     <p class="text-danger">{{ $message }}</p>
                 @enderror
@@ -85,6 +92,12 @@
         </form>
     </div>
 </div>
+
+
+
+</div>
+
+
 
 
 

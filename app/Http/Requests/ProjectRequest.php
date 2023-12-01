@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostRequest extends FormRequest
+class ProjectRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,6 @@ class PostRequest extends FormRequest
     {
         return [
             'title' => 'required|min:2|max:20',
-            'release_date' => 'numeric|max:60',
             'description' => 'required|min:5',
         ];
     }
@@ -33,8 +32,6 @@ class PostRequest extends FormRequest
             'title.required' => 'Devi inserire il titolo del progetto',
             'title.min' => 'Il titolo del progetto deve avere almeno :min caratteri',
             'title.max' => 'Il titolo del progetto non può avere più di :max caratteri',
-            'release_date.max' => 'La data non può avere più di :max minuti',
-            'release_date.numeric' => 'La data deve essere un numero',
             'description.required' => 'La descrizione del progetto non può essere vuoto',
             'description.min' =>  'La descrizione del progetto deve avere almeno :min caratteri'
         ];

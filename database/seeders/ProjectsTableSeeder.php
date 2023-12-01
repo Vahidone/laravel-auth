@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 use App\Models\Project;
 use App\Functions\Helper;
 
-class PostTableSeeder extends Seeder
+class ProjectsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

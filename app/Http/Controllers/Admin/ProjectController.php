@@ -6,9 +6,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Project;
-use App\Http\Requests\ProjectRequest;
 use App\Functions\Helper;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\ProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -50,12 +50,12 @@ class ProjectController extends Controller
         $form_data['slug'] = Helper::generateSlug($form_data['title'], Project::class);
         $form_data['release_date'] = date('Y-m-d');
 
-        // se esiste la chiave image salvo l'immagine nel file system e nel database
+
         if(array_key_exists('image', $form_data)) {
 
-            // prima di salvare il file prendo il nome del file per salvarlo nel db
+
             $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
-            // salvo il file nello storage rinominandolo
+
             $form_data['image'] = Storage::put('uploads', $form_data['image']);
 
         }
@@ -110,15 +110,15 @@ class ProjectController extends Controller
         }
 
         if(array_key_exists('image', $form_data)){
-            // se esiste la chiave image vuol dire che devo sostituire l'immagine presente (se c'è) eliminando quella vecchia
+
             if($project->image){
-                // se era presente la elimino dallo storage
+
                 Storage::disk('public')->delete($project->image);
             }
 
-            // prima di salvare il file prendo il nome del file per salvarlo nel db
+
             $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
-            // salvo il file nello storage rinominandolo
+
             $form_data['image'] = Storage::put('uploads', $form_data['image']);
         }
 
@@ -136,7 +136,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-          // se il post contiene una immagine vuol dire che la devo eliminare
+
           if($project->image){
             Storage::disk('public')->delete($project->image);
         }
